@@ -46,8 +46,10 @@ var drugaLiczba = document.getElementById("second_number").value;
 var e = document.getElementById("lista");
 var dzialanie = e.options[e.selectedIndex].value;
 
-var str = 'https://lucazapi1.azure-api.net/calc/'+dzialanie+'?a='+pierwszaLiczba+'&b='+drugaLiczba+'&key=aad9b5277f7b40c387e46118fc25bd52';
-
+//Adres z API
+//var str = 'https://lucazapi1.azure-api.net/calc/'+dzialanie+'?a='+pierwszaLiczba+'&b='+drugaLiczba+'&key=aad9b5277f7b40c387e46118fc25bd52';
+//Adres z web appa
+var str = 'http://calcluca.azurewebsites.net/api/'+dzialanie+'?a='+pierwszaLiczba+'&b='+drugaLiczba;
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
