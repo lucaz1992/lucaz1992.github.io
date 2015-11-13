@@ -54,17 +54,17 @@ xhttp.onreadystatechange = function() {
         myFunction(xhttp);
     }
 };
-xhttp.open("GET", "http://www.w3schools.com/Xml/books.xml", true);
+xhttp.open("GET", str, true);
 xhttp.send();
 
 function myFunction(xml) {
     var xmlDoc = xml.responseXML;
     document.getElementById("demo").innerHTML =
-    xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+    xmlDoc.getElementsByTagName("value")[0].childNodes[0].nodeValue;
 }
 
 
-//document.getElementById('para').innerHTML = str;
+document.getElementById('para').innerHTML = str;
 
 
 }
