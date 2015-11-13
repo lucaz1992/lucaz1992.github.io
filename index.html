@@ -51,13 +51,14 @@ var dzialanie = e.options[e.selectedIndex].value;
 //Adres z web appa
 var str = 'http://calcluca.azurewebsites.net/api/'+dzialanie+'?a='+pierwszaLiczba+'&b='+drugaLiczba;
 var xhttp = new XMLHttpRequest();
+xhttp.open("GET", str, true);
+xhttp.send();
 xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         myFunction(xhttp);
     }
 };
-xhttp.open("GET", str, true);
-xhttp.send();
+
 
 function myFunction(xml) {
     var xmlDoc = xml.responseXML;
