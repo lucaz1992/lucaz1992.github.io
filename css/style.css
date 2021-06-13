@@ -50,7 +50,7 @@ main {
 
 #medical-banners {
     display: flex;
-    flex: 0 1 60vw;
+    flex: 0 1 80vw;
     height: 50vh;
     justify-content: center;
 }
@@ -63,6 +63,10 @@ main {
 
 /* Screen Sizes 500px and Up */
 @media (min-width: 500px) {
+    iframe {
+        width: 100%;
+    }
+
     #landing {
       display: flex;
       height: 100%;
