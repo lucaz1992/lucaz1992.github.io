@@ -61,3 +61,19 @@ main {
     justify-content: center;
 }
 
+/* Screen Sizes 500px and Up */
+@media (min-width: 500px) {
+    #landing {
+      display: flex;
+      height: 100%;
+    }
+  
+    #header {
+      height: 100vh;
+    }
+  
+    #banners {
+      height: 100vh;
+    }
+  }
+
