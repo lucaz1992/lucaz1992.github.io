@@ -2,75 +2,12 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>Kalkulator</title>
+	<title>Warszawskie Spotkanie Endokrynologiczne</title>
 </head>
 
 <body>
-<h1>Kalkulator</h1>
-<h2>Proszę wybrać operację:</h2>	
-<br>
-
- <select id="lista">
-  <option value="add">Dodawanie</option>
-  <option value="sub">Odejmowanie</option>
-  <option value="mul">Mnożenie</option>
-  <option value="div">Dzielenie</option>
-  <option value="pow">Potęgowanie</option>
-  <option value="root">Pierwiastkowanie</option>
-</select>
- 
-<br>
-<br>
-
- <form>
-  Wprowadź pierwszą liczbę:<br>
-  <input type="number" id="first_number">
-  <br>
-  Wprowadź drugą liczbę:<br>
-  <input type="number" id="second_number">
-</form> 
-
-<br>
-<button type="button" onclick="Obliczanie()">Oblicz</button>
-<br>
-<p id="test"></p>
-<br>
-<p>Wynik liczby to: </p><p id="para"></p>
-
 
 <script>
-function Obliczanie(){
-var pierwszaLiczba = document.getElementById("first_number").value;
-var drugaLiczba = document.getElementById("second_number").value;
-
-var e = document.getElementById("lista");
-var dzialanie = e.options[e.selectedIndex].value;
-
-//Adres z API
-//var str = 'https://lucazapi1.azure-api.net/calc/'+dzialanie+'?a='+pierwszaLiczba+'&b='+drugaLiczba+'&key=aad9b5277f7b40c387e46118fc25bd52';
-//Adres z web appa
-var str = 'http://calcluca.azurewebsites.net/api/'+dzialanie+'?a='+pierwszaLiczba+'&b='+drugaLiczba;
-var xhttp = new XMLHttpRequest();
-xhttp.open("GET", str, true);
-xhttp.send();
-xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-        myFunction(xhttp);
-    }
-};
-
-
-function myFunction(xml) {
-    var xmlDoc = xml.responseXML;
-    document.getElementById("para").innerHTML =
-    xmlDoc.getElementsByTagName("value")[0].childNodes[0].nodeValue;
-}
-
-
-document.getElementById('test').innerHTML = str;
-
-
-}
 </script>	
 </body>
 </html>
